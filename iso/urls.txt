@@ -1,0 +1,16 @@
+﻿http://www.debian.org/CD/netinst/
+
+http://www.muhuk.com/2010/07/how-to-create-a-debian-vm-with-qemu/
+
+http://www.ubuntu.com/server/get-ubuntu/download
+
+
+http://isoredirect.centos.org/centos/5/isos/i386/
+http://mirrors.163.com/centos/5.5/isos/i386/
+CentOS-5.5-i386-netinstall.iso
+
+http://fedoraproject.org/zh_CN/get-fedora-options#desktops
+
+http://www.h7.dion.ne.jp/~qemu-win/
+
+

@@ -1,0 +1,55 @@
+﻿CentOS 5
+首先，在http://mirrors.163.com/centos/5.5/isos/i386/下载7个iso文件。
+然后创建硬盘：
+qemu-img.exe create -f qcow2 centos.bin 10G
+用第一张iso引导安装：
+qemu.exe -L . -m 1024 -cdrom CentOS-5.5-i386-bin-1of7.iso -hda centos.bin -localtime -boot d
+<Enter>选择图形模式安装。
+CD Found选Skip
+进入图形界面，按Next。
+语言，选Chinese(Simplified)（简体中文），按“下一步”。
+键盘，默认选中美国英语式，按“下一步”。
+弹出警告，提示要格式化hda，按“是”。
+选择“在选定磁盘上删除所有分区并创建默认分区结构。”，按“下一步”。
+警告，按“是”。
+网络设置，默认即可，按“下一步”。
+时区，默认是选中“亚洲/上海”，按“下一步”。
+输入根密码，填好后按“下一步”。
+获取安装信息，
+默认勾选Desktop - Gnome
+（可选的还有Desktop - KDE, Server, Server - GUI），
+和“稍后定制”，按“下一步”
+检查依赖关系。
+按“下一步”，提示要用#1, #2, #3, #4, #5, #7这6张光盘。按“继续”。
+提示更换光盘，Ctrl-Alt-2切换：
+(qemu) change cdrom CentOS-5.5-i386-bin-2of7.iso
+Ctrl-Alt-1切换回去，按“确定”继续安装。
+用类似的办法更换其他光盘。
+安装过程中偶尔会出现一些中文错字，无视之。
+完成安装后按“重新引导”，然后用无CDROM方式启动QEMU：
+> qemu.exe -L . -m 1024 -hda centos.bin -localtime
+控制台startup后进入图形界面，显示CentOS 5的Logo以及加载进度条。
+完成后，进入配置页：
+欢迎，按“前进”。
+防火墙，选“禁用”，然后按“前进”。弹出对话框，按“是”。
+SELinux设置：强制，按“前进”。
+日期和时间，默认即可，按“前进”。
+创建用户，输入一个非root的用户和密码。按“前进”。
+声卡，没有检测到声卡。按“前进”。
+附加光盘。按“完成”忽略之。
+切换到控制台，很快又切换到另一个图形界面的登录界面。
+输入用户名和密码，登录进去后稍等片刻显示桌面。
+打开应用程序->Internet->Firefox Web Browser，检查是否可以上网。
+
+http://dl.javaeye.com/upload/picture/pic/78266/455b0831-2c90-3358-a0a9-6c4bca0d55f6.jpg
+
+确实比较快，但打开网页还是有点卡。
+
+
+
+
+
+
+
+
+

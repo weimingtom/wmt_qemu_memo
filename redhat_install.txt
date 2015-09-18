@@ -1,0 +1,71 @@
+﻿Red Hat Enterprise Linux AS 2.6.9-11.EL（RHEL，红帽企业Linux v.4关键业务服务器）
+> qemu-img.exe create -f qcow2 redhat.bin 10G
+> qemu.exe -L . -m 1024 -cdrom H: -hda redhat.bin -localtime -boot d -monitor stdio
+进入启动界面显示Red Hat Enterprise Linux的Logo和boot提示符，
+按Enter选择图形界面安装。
+CD Found提示插入CD。按Skip。
+等一会，从控制台切换到Red Hat Enterprise Linux AS安装界面，按Next。
+Language Selection选择Chinese(Simplified)简体中文，按Next。
+键盘配置选择U.S.English，按“下一步”。
+磁盘分区设置选择自动分区，按“下一步”。
+弹出对话框要求格式化hda上的分区，选“是”。
+选择“删除系统内的所有分区”，按“下一步”。
+弹出对话框提示删除/dev/hda的硬盘分区，选“是”。
+显示列表，把/dev/hda自动分区成hda1和hda2。按“下一步”。
+提示GRUB引导安装在/dev/hda上，按“下一步”。
+网络设置，默认设置即可，按“下一步”。
+防火墙选择“无防火墙”，按“下一步”。弹出警告框按“继续”。
+语言，默认选中Chinese(P.R.of China)，按“下一步”。
+时区默认选中亚洲/上海，按“下一步”。
+根口令，随便输个密码，按“下一步”。
+等待片刻（读取软件包），
+然后选择“安装默认软件包”，按下一步。
+(System-config-packages)
+选择“定制要安装的软件包”，按“下一步”。
+杂项，选择“最小值”，按“下一步”。
+提示/root/install.log为安装日志，/root/anaconda-ks.cfg
+是所选择的安装选项的kickstart文件。
+按“下一步”开始安装系统。
+提示需要#1,#2,#3三张光盘，选择“继续”。
+等一会，光驱中要求更换#2碟。
+用Ctrl-Alt-2切换到QEMU的控制台
+（见http://www.h7.dion.ne.jp/~qemu-win/HowToFloppyCdrom-en.html）
+输入：
+(qemu) info block
+cdrom: type=cdrom removable=1 locked=0 [not inserted]
+hda: type=hd removable=0 file=redhat.bin ro=0 drv=qcow2
+fda: type=floppy removable=1 locked=0 [not inserted]
+可以看到#1光盘已被吐出，需要插入新的光盘。
+在光驱（假设是H盘）中插入#2盘。然后键入：
+(qemu) change cdrom H:
+(qemu) info block
+cdrom: type=cdrom removable=1 locked=0 file=H: ro=0 drv=host_device
+hda: type=hd removable=0 file=redhat.bin ro=0 drv=qcow2
+fda: type=floppy removable=1 locked=0 [not inserted]
+然后按Ctrl-Alt-1切换回虚拟机。
+按“确定”，继续安装。
+提示插入#3盘，同上所述切换光盘。
+提示再次插入#1盘，同上所述切换光盘。
+完成安装后，按“重新引导”。
+退出QEMU，备份硬盘镜像，然后用无光驱方式启动QEMU：
+> qemu.exe -L . -m 1024 -hda redhat.bin -localtime
+从控制台切换到图形界面：
+欢迎，按“下一步”。
+许可协议，按“下一步”。
+日期时间，按“下一步”。
+显示，默认即可，按“下一步”。
+Red Hat网络登陆，选择“告诉我为什么需要注册并提供一个Red Hat登陆账户”。
+按“下一步”，选择“我现在不能完成注册，请在以后提醒我”，按下一步。
+系统用户，设置一个非管理的账户。按下一步。
+额外光盘，按“下一步”。
+结束设置，按“下一步”。
+转入登陆界面。
+用户名为root，口令为安装时设置的密码，或者使用常规用户名和密码登陆。
+打开网络浏览器，测试网络连接。
+
+http://dl.javaeye.com/upload/picture/pic/78250/f826bfbc-6b95-3547-b440-862179d82744.jpg
+
+图形界面的速度比ubuntu和xp稍快，
+
+
+

@@ -1,0 +1,65 @@
+﻿Red Flag Linux Desktop 5
+> qemu-img.exe create -f qcow2 redflag5.bin 10G
+> qemu.exe -L . -m 1024 -cdrom H: -hda redflag5.bin -localtime -boot d
+Enter进入图形模式
+红旗Linux软件许可协议书：选“接受”。
+选“自动分区”，按“下一步”。
+选“删除系统上的所有分区”，按“下一步”。
+警告，按“是”。
+分区列表，按“下一步”。
+引导程序，按“下一步”。
+网络设置，按“下一步”。
+root用户密码，输入后按“下一步”。
+读取软件包，检查依赖关系，按“下一步”开始安装。
+安装到剩余40分钟时，提示更换光盘2。
+按Ctrl-Alt-2切换到控制台。
+更换光盘2到光驱（H盘），然后在控制台输入：
+(qemu) change cdrom H:
+然后按Ctrl-Alt-1切换回虚拟机。
+按确定，继续安装。
+100%后，进行后期配置，安装引导程序。
+安装完成，按“重新启动”。
+退出图形界面，然后关闭QEMU。
+以无CDROM形式启动QEMU：
+> qemu.exe -L . -m 1024 -hda redflag5.bin -localtime
+进入控制台登陆，如果没有输入，将进入图形登陆界面。
+用户名root，密码用之前安装时设置的密码。
+配置显卡，配置网卡。
+“缺省网关”和“缺省域名服务器”填入外部宿主系统的网关和DNS的IP（用ipconfig /all查看），按“确定”。重新启动xwindow。
+
+
+
+
+Red Flag Linux Desktop 6
+> qemu-img.exe create -f qcow2 redflag.bin 10G
+> qemu.exe -L . -m 1024 -cdrom H: -hda redflag.bin -localtime -boot d
+Enter进入图形模式
+Beginning，选择Chinese(Simplified)(简体中文)，按Next。
+许可协议书，选“接受”，按“下一步”。
+选“自动分区”，按“下一步”。
+对话框提示格式化hda，按“是”。
+选“删除系统内的所有分区”，按“下一步”。
+对话框提示格式化hda，按“是”。
+设置引导程序，默认即可，按“下一步”。
+网络设置，默认即可，按“下一步”。
+根账户口令，输入后按“下一步”。
+稍等片刻，按“下一步”开始安装。
+完成后，安装引导装载程序，
+按重新引导，关闭QEMU，以无CDROM方式重启QEMU：
+> qemu.exe -L . -m 1024 -hda redflag.bin -localtime
+等几秒过了引导程序后，显示Red Flag Linux Desktop的Logo。
+（按F2可切换到控制台）
+然后显示控制台登陆，很快又切换到图形界面的登录界面。
+左下角“系统”可切换到控制台模式登陆。
+输入用户名（root）和密码（前面安装时设置好的），回车。
+显示欢迎的飞溅后，稍等片刻，载入桌面。
+桌面很像XP。
+弹出“显示配置”，默认即可。
+点击桌面上的“Firefox浏览器”图标，测试一下上网。
+
+
+虚拟的速度比较慢。
+
+
+
+
